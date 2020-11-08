@@ -1,0 +1,24 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'com.android.lint'
+
+dependencies {
+    // Lint version is equal to the AGP version +23 to the major version.
+    // AGP 4.1.0 = Lint 27.1.0.
+    final lintVersion = '27.1.0'
+    compileOnly "com.android.tools.lint:lint-api:$lintVersion"
+    compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
+
+    // Add Kotlin dependency for writing Lint checks in Kotlin:
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+jar {
+    manifest {
+        // Point to our issue registry class.
+        attributes("Lint-Registry-v2": "com.github.mrbean355.android.lint.MyIssueRegistry")
+    }
+}

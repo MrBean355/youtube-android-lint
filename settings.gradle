@@ -1,2 +1,3 @@
 rootProject.name = "Android Lint Sample"
-include ':app'
+include ':app',
+        ':lint-checks'
