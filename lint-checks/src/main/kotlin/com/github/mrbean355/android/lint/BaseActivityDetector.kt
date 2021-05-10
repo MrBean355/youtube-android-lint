@@ -28,13 +28,13 @@ class BaseActivityDetector : Detector(), SourceCodeScanner {
 
     }
 
-    override fun getApplicableUastTypes(): List<Class<out UElement>>? {
+    override fun getApplicableUastTypes(): List<Class<out UElement>> {
         // Return the source code elements you want to check.
         // In this case, we want to check class definitions.
         return listOf(UClass::class.java)
     }
 
-    override fun createUastHandler(context: JavaContext): UElementHandler? {
+    override fun createUastHandler(context: JavaContext): UElementHandler {
         return object : UElementHandler() {
 
             // Called when visiting a class definition.
