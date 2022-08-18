@@ -5,7 +5,7 @@ apply plugin: 'com.android.lint'
 dependencies {
     // Lint version is equal to the AGP version +23 to the major version.
     // AGP 4.2.0 = Lint 27.2.0.
-    final lintVersion = '27.2.0'
+    final lintVersion = '30.2.2'
     compileOnly "com.android.tools.lint:lint-api:$lintVersion"
     compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
 
